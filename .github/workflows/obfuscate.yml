@@ -1,0 +1,46 @@
+name: Obfuscate worker.js
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  obfuscate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Set up Node.js (for obfuscation)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Install JavaScript obfuscation tool
+      - name: Install JavaScript obfuscator
+        run: npm install javascript-obfuscator
+
+      # Backup the worker.js file
+      - name: Backup worker.js
+        run: cp _worker.js _worker.bak
+
+      # Obfuscate the worker.js file
+      - name: Obfuscate worker.js
+        run: npx javascript-obfuscator _worker.js --output _worker.js
+
+      # Commit and push changes
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add _worker.js
+          git add _worker.bak
+          git commit -m "Obfuscated _worker.js and backed up original as .bak"
+          git push
