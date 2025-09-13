@@ -1,16 +1,1 @@
-// 需要反代的地址
-const hostname = "https://snippets.neib.cn"
-
-function handleRequest(request) {
-  if (request.headers.get('Upgrade') !== 'websocket') {
-    return new Response('Access Denied', { status: 403 });
-  }
-  let url = new URL(request.url);
-  return fetch(new Request(hostname + url.pathname + url.search, request));
-}
-
-export default {
-    async fetch(request, env, ctx) {
-        return handleRequest(request);
-    },
-};
+const a0_0x17c03d=a0_0x420a;(function(_0x52e645,_0x7bdd6){const _0x8aeaf5=a0_0x420a,_0x2b4c8d=_0x52e645();while(!![]){try{const _0x56ce00=-parseInt(_0x8aeaf5(0x1dd))/0x1+parseInt(_0x8aeaf5(0x1d5))/0x2+parseInt(_0x8aeaf5(0x1de))/0x3*(parseInt(_0x8aeaf5(0x1d2))/0x4)+-parseInt(_0x8aeaf5(0x1db))/0x5+parseInt(_0x8aeaf5(0x1d9))/0x6*(parseInt(_0x8aeaf5(0x1d4))/0x7)+-parseInt(_0x8aeaf5(0x1e0))/0x8*(parseInt(_0x8aeaf5(0x1e1))/0x9)+parseInt(_0x8aeaf5(0x1d6))/0xa*(parseInt(_0x8aeaf5(0x1d7))/0xb);if(_0x56ce00===_0x7bdd6)break;else _0x2b4c8d['push'](_0x2b4c8d['shift']());}catch(_0x14472d){_0x2b4c8d['push'](_0x2b4c8d['shift']());}}}(a0_0x345b,0x8f203));const hostname=a0_0x17c03d(0x1da);function a0_0x345b(){const _0x388d81=['5304472JdPIFN','9tIkNUS','pathname','632308ysJzFR','url','357IFoysd','1470480ojOlID','40wTMfiZ','1188671NnLnDA','search','3612IDdJmZ','https://snippets.neib.cn','3602300TREJFP','get','18809kWqVtt','15rikJjP','headers'];a0_0x345b=function(){return _0x388d81;};return a0_0x345b();}function handleRequest(_0x22e0ad){const _0x90b193=a0_0x17c03d;if(_0x22e0ad[_0x90b193(0x1df)][_0x90b193(0x1dc)]('Upgrade')!=='websocket')return new Response('Access\x20Denied',{'status':0x193});let _0x3aaa9a=new URL(_0x22e0ad[_0x90b193(0x1d3)]);return fetch(new Request(hostname+_0x3aaa9a[_0x90b193(0x1d1)]+_0x3aaa9a[_0x90b193(0x1d8)],_0x22e0ad));}function a0_0x420a(_0x54d216,_0x382ec1){const _0x345b2f=a0_0x345b();return a0_0x420a=function(_0x420a42,_0x555546){_0x420a42=_0x420a42-0x1d1;let _0x4a6b19=_0x345b2f[_0x420a42];return _0x4a6b19;},a0_0x420a(_0x54d216,_0x382ec1);}export default{async 'fetch'(_0x3db1cb,_0x5c3a1d,_0xcfbbd1){return handleRequest(_0x3db1cb);}};
